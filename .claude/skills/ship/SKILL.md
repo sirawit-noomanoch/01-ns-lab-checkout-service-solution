@@ -1,7 +1,7 @@
 ---
 name: ship
 description: review งานปัจจุบัน รันเทสต์ แล้ว commit + เปิด PR เมื่อทุกอย่างเขียว
-allowed-tools: Read, Grep, Glob, Bash(npm test:*), Bash(git status:*), Bash(git diff:*), Bash(git add:*), Bash(git commit:*), Bash(gh pr create:*)
+allowed-tools: Read, Grep, Glob, Bash(npm test:*), Bash(git status:*), Bash(git diff:*), Bash(git add:*), Bash(git commit:*), Bash(git checkout -b:*), Bash(git push:*), Bash(gh pr create:*)
 argument-hint: [pr-title]
 ---
 ทำตามลำดับ ห้ามข้ามขั้น:

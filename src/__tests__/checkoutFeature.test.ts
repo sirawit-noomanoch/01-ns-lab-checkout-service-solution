@@ -61,7 +61,12 @@ describe('checkout + idempotency', () => {
       { sku: 'RARE', name: 'Rare', priceCents: 9000, stock: 0 },
     ]);
     await expect(
-      checkout({ lines: [{ sku: 'BOOK', quantity: 3 }, { sku: 'RARE', quantity: 1 }] }),
+      checkout({
+        lines: [
+          { sku: 'BOOK', quantity: 3 },
+          { sku: 'RARE', quantity: 1 },
+        ],
+      }),
     ).rejects.toThrow(/insufficient/);
     expect(await available('BOOK')).toBe(10); // rolled back
   });
