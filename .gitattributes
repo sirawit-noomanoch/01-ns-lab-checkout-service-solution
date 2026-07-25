@@ -1,0 +1,3 @@
+# Hook scripts must stay LF: bash on macOS/Linux fails on CRLF shebangs
+# with "bad interpreter: /usr/bin/env bash^M".
+*.sh text eol=lf

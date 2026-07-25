@@ -11,11 +11,7 @@ import { percentOf } from '../lib/money';
  *   - 'fixed'   -> value (cents)
  *   - never exceeds the subtotal, never negative
  */
-export function discountForCoupon(
-  coupon: Coupon | null,
-  subtotalCents: number,
-  clock: Clock = systemClock,
-): number {
+export function discountForCoupon(coupon: Coupon | null, subtotalCents: number, clock: Clock = systemClock): number {
   if (!coupon) return 0;
   if (new Date(coupon.expiresAt).getTime() <= clock.now().getTime()) return 0;
   if (subtotalCents < coupon.minSubtotalCents) return 0;
